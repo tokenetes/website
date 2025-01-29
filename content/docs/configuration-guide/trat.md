@@ -11,7 +11,7 @@ The external API specification section specifies the external API for which the 
 Let's delve into the details of TraTs by examining an example.
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraT
 metadata:
   name: order-trade-api-trat

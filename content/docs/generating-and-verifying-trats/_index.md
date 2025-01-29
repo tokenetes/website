@@ -14,9 +14,9 @@ To generate and verify TraTs, you must first write configurations specifying how
 
     Defines which endpoints within a microservice should bypass TraT verification. This is useful for non-functional APIs such as health and monitoring endpoints, or functional endpoints that are not yet TraT-ready. For further details, refer to [TraTExclusion](/docs/configuration-guide/trat-exclusion).
 
-3. [TratteriaConfig](/docs/configuration-guide/tratteria-config)
+3. [TokenetesConfig](/docs/configuration-guide/tokenetes-config)
 
-    Establishes general TraT configurations applicable across all external APIs. Detailed information can be found at [TratteriaConfig](/docs/configuration-guide/tratteria-config).
+    Establishes general TraT configurations applicable across all external APIs. Detailed information can be found at [TokenetesConfig](/docs/configuration-guide/tokenetes-config).
 
 
 <br>
@@ -25,7 +25,7 @@ For a comprehensive guidance on these resources, check out the [configuration gu
 
 ## Generating TraTs
 
-After configuring and deploying the above resources, authorized services can request TraTs from the Tratteria service at the `POST /txn-token` endpoint.
+After configuring and deploying the above resources, authorized services can request TraTs from the Tokenetes service at the `POST /txn-token` endpoint.
 
 #### TraT Token Request Parameters
 
@@ -37,7 +37,7 @@ Should be set to: `urn:ietf:params:oauth:grant-type:token-exchange`
 
 **audience (REQUIRED)**
 
-The audience for which TraTs are intented for. This value should be the same as the one configured in the [TratteriaConfig](/docs/configuration-guide/tratteria-config) resource.
+The audience for which TraTs are intented for. This value should be the same as the one configured in the [TokenetesConfig](/docs/configuration-guide/tokenetes-config) resource.
 
 **requested_token_type (REQUIRED)**
 
@@ -45,7 +45,7 @@ Should be set to `urn:ietf:params:oauth:token-type:txn-token`
 
 **subject_token (REQUIRED)**
 
-The individual, entity, or user involved in the transaction. As configured in the [TratteriaConfig](/docs/configuration-guide/tratteria-config) resource, it should be either OIDC ID token or self-signed JWT tokens.
+The individual, entity, or user involved in the transaction. As configured in the [TokenetesConfig](/docs/configuration-guide/tokenetes-config) resource, it should be either OIDC ID token or self-signed JWT tokens.
 
 **subject_token_type**
 
@@ -98,7 +98,7 @@ The TraT token request expects `request_context` in the base64url encoded JSON f
 Including the above parameters, below is an example of the TraT token request using curl:
 
 ```bash
-curl --location 'https://tratteria/token_endpoint' \
+curl --location 'https://tokenetes/token_endpoint' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'requested_token_type=urn:ietf:params:oauth:token-type:txn_token' \
 --data-urlencode 'audience=https://example.org/' \
@@ -109,7 +109,7 @@ curl --location 'https://tratteria/token_endpoint' \
 --data-urlencode 'request_context=ewogICJyZXFfaXAiOiAiMTkyLjEyOC4wLjg5Igp9'
 ```
 
-For a practical example of requesting TraTs, please refer to the Tratteria Example Application's [Gateway service](https://github.com/tratteria/example-application/tree/main/gateway), which requests TraTs for the application.
+For a practical example of requesting TraTs, please refer to the Tokenetes Example Application's [Gateway service](https://github.com/tokenetes/example-application/tree/main/gateway), which requests TraTs for the application.
 
 For more details and context on TraT token request, consult the [TraTs draft](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/).
 
@@ -168,16 +168,16 @@ For details on TraT claims check out [TraTs draft](https://datatracker.ietf.org/
 
 ## Verifying TraTs
 
-TraTs are verified using [Tratteria agents](https://github.com/tratteria/tratteria-agent), which are sidecar containers that run alongside microservice containers.
+TraTs are verified using [Tokenetes agents](https://github.com/tokenetes/tokenetes-agent), which are sidecar containers that run alongside microservice containers.
 
-Tratteria offers two methods to verify TraTs: [Interception](https://github.com/tratteria/tratteria-agent?tab=readme-ov-file#interception-mode) and [Delegation](https://github.com/tratteria/tratteria-agent?tab=readme-ov-file#delegation-mode).
+Tokenetes offers two methods to verify TraTs: [Interception](https://github.com/tokenetes/tokenetes-agent?tab=readme-ov-file#interception-mode) and [Delegation](https://github.com/tokenetes/tokenetes-agent?tab=readme-ov-file#delegation-mode).
 
 #### Interception Mode:
 
-In this mode, incoming requests are intercepted by the Tratteria agent, which verifies the TraTs and forwards the trat-verified requests to the microservice.
+In this mode, incoming requests are intercepted by the Tokenetes agent, which verifies the TraTs and forwards the trat-verified requests to the microservice.
 
 #### Delegation Mode:
 
-In Delegation Mode, requests are not intercepted; instead, Tratteria agents' trat-verification API must be called with request data to verify TraTs. This mode is suitable for environments where intercepting incoming requests is not possible or desired, for example, in environments with a service mesh that is already intercepting incoming requests.
+In Delegation Mode, requests are not intercepted; instead, Tokenetes agents' trat-verification API must be called with request data to verify TraTs. This mode is suitable for environments where intercepting incoming requests is not possible or desired, for example, in environments with a service mesh that is already intercepting incoming requests.
 
-For details on how to verify TraTs using Tratteria agents, visit [Tratteria agents readme](https://github.com/tratteria/tratteria-agent).
+For details on how to verify TraTs using Tokenetes agents, visit [Tokenetes agents readme](https://github.com/tokenetes/tokenetes-agent).

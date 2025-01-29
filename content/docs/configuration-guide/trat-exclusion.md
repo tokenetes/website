@@ -9,7 +9,7 @@ The TraTExclusion resource is used to specify endpoints of a service that do not
 Below is an example of TraTExclusion for the order service:
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraTExclusion
 metadata:
   name: order-service-tratexcl

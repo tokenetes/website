@@ -166,8 +166,8 @@ footer a {
 
 </style>
   <div class="home">
-    <img src="/img/logos/image-logo.svg" alt="Tratteria Logo">
-    <h1>Tratteria</h1>
+    <img src="/img/logos/image-logo.svg" alt="Tokenetes Logo">
+    <h1>Tokenetes</h1>
     <h2>Transaction Tokens Service</h2>
     <h3>Assure identity and context in microservices with <a href="https://tratteria.io/docs/transaction-token/" target="_blank">Transaction Tokens</a>.</h3>
     <div class="buttons">
@@ -178,10 +178,10 @@ footer a {
   <div class="divider"></div>
   
   <div class="community-buttons">
-    <a href="https://github.com/orgs/tratteria/discussions" class="community-button" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/orgs/tokenetes/discussions" class="community-button" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-github" style="margin-right: 8px;"></i> Join the Discussion
     </a>
-    <a href="https://github.com/tratteria" class="community-button" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/tokenetes" class="community-button" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-github" style="margin-right: 8px;"></i> View on GitHub
     </a>
   </div>

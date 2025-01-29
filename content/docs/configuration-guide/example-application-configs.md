@@ -4,16 +4,16 @@ weight: 4
 toc: true
 ---
 
-Below are the Tratteria Kubernetes resources for the [Tratteria example application](https://github.com/tratteria/example-application). These examples can serve as references when writing the resources for your microservices application.
+Below are the Tokenetes Kubernetes resources for the [Tokenetes example application](https://github.com/tokenetes/example-application). These examples can serve as references when writing the resources for your microservices application.
 
 ### TraTs
 
-The Tratteria example application has four external APIs; consequently, there are four TraT resources.
+The Tokenetes example application has four external APIs; consequently, there are four TraT resources.
 
 `stock-details-api-trat.yaml:`
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraT
 metadata:
   name: stock-details-api-trat
@@ -40,7 +40,7 @@ spec:
 `stock-holdings-api-trat.yaml:`
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraT
 metadata:
   name: stock-holdings-api-trat
@@ -61,7 +61,7 @@ spec:
 `stock-search-api-trat.yaml:`
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraT
 metadata:
   name: stock-search-api-trat
@@ -88,7 +88,7 @@ spec:
 `stock-trade-api-trat.yaml:`
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraT
 metadata:
   name: stock-trade-api-trat
@@ -127,7 +127,7 @@ There are two services, the stocks and order service, that verify TraTs in the e
 `order-service-tratexcl.yaml`
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraTExclusion
 metadata:
   name: order-service-tratexcl
@@ -142,7 +142,7 @@ spec:
 `stocks-service-tratexcl.yaml:`
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
+apiVersion: tokenetes.io/v1alpha1
 kind: TraTExclusion
 metadata:
   name: stocks-service-tratexcl
@@ -154,19 +154,19 @@ spec:
       method: "GET"
 ```
 
-### TratteriaConfig
+### TokenetesConfig
 
-`tratteriacfg.yaml:`
+`tokenetescfg.yaml:`
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
-kind: TratteriaConfig
+apiVersion: tokenetes.io/v1alpha1
+kind: TokenetesConfig
 metadata:
-  name: alpha-stocks-tratteriacfg
+  name: alpha-stocks-tokenetescfg
   namespace: alpha-stocks-dev
 spec:
   token:
-    issuer: "https://alphastocks.com/tratteria"
+    issuer: "https://alphastocks.com/tokenetes"
     audience: "https://alphastocks.com/"
     lifeTime: "15s"
   subjectTokens:
