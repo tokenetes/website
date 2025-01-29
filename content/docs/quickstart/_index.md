@@ -35,8 +35,6 @@ Output:
 
 ```bash
 tokenetes-7789594688-b8jjq   1/1     Running   0          67s
-tokenetes-7789594688-g565s   1/1     Running   0          67s
-tokenetes-7789594688-gjs2r   1/1     Running   0          67s
 ```
 
 ## TraTs
