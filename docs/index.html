@@ -9,7 +9,7 @@
     <script async src="https://cse.google.com/cse.js?cx=315531be7c52f5156"></script>
     <title>
       
-        Tratteria
+        Tokenetes
       
     </title>
     <link rel="stylesheet" href="/css/style.1df9f62415d297f5c54d2fc02d71b1b122e108253802ae8fa49b752f0120f199.css" integrity="sha256-Hfn2JBXSl/XFTS/ALXGxsSLhCCU4Aq6PpJt1LwEg8Zk=">
@@ -41,7 +41,7 @@
   <div class="container nav-container">
     <div class="navbar-brand">
       <a class="navbar-item text-hide" href="https://tratteria.io/">
-        Tratteria
+        Tokenetes
         
         
           <img src="/img/logos/text-image-logo.svg" class="logo">
@@ -105,7 +105,7 @@
 <nav class="section-nav">
       <p class="menu-label open" id="leftnavToggle">Documentation:</p>      
       <ul class="menu-list" id="leftnav">
-        <li><a  class="active"  href="/docs/">Introduction to Tratteria</a>
+        <li><a  class="active"  href="/docs/">Introduction to Tokenetes</a>
         
         </li>
     
@@ -115,7 +115,7 @@
           </ul>
         </li>
     
-        <li><a  class="active"  href="/docs/installation/">Installing Tratteria</a>
+        <li><a  class="active"  href="/docs/installation/">Installing Tokenetes</a>
           <ul>
             
             <li>
@@ -123,11 +123,11 @@
             </li>
             
             <li>
-                <a  class="active"  href="/docs/installation/deploying-tratteria/">Deploying Tratteria Service</a>
+                <a  class="active"  href="/docs/installation/deploying-tratteria/">Deploying Tokenetes Service</a>
             </li>
             
             <li>
-                <a  class="active"  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tratteria Agents</a>
+                <a  class="active"  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tokenetes Agents</a>
             </li>
             
           </ul>
@@ -151,7 +151,7 @@
             </li>
             
             <li>
-                <a  class="active"  href="/docs/configuration-guide/tratteria-config/">TratteriaConfig</a>
+                <a  class="active"  href="/docs/configuration-guide/tratteria-config/">TokenetesConfig</a>
             </li>
             
             <li>
@@ -172,7 +172,7 @@
 
         </section>
         <section class="col col-8">
-          <h1 class="title">Introduction to Tratteria</h1>
+          <h1 class="title">Introduction to Tokenetes</h1>
           <p class="subtitle"></p>
           
 <div class="content">
@@ -183,7 +183,7 @@
     padding: 0;
 }
 </style>
-<p>Welcome to the documentation for Tratteria, an open-source <a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/" target="_blank" rel="noopener">Transaction Tokens</a> (TraTs) Service. This guide will help you understand what Tratteria is, how it works, and how to implement it in your microservices architecture.</p>
+<p>Welcome to the documentation for Tokenetes, an open-source <a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/" target="_blank" rel="noopener">Transaction Tokens</a> (TraTs) Service. This guide will help you understand what Tokenetes is, how it works, and how to implement it in your microservices architecture.</p>
 <h2 id="trat">
   TraT
   <a href="#trat">
@@ -273,46 +273,46 @@ function closeModal() {
   document.onkeydown = null; // Remove the event listener when the modal is closed
 }
 </script>
-<h2 id="tratteria-architecture">
-  Tratteria Architecture
-  <a href="#tratteria-architecture">
+<h2 id="tokenetes-architecture">
+  Tokenetes Architecture
+  <a href="#tokenetes-architecture">
     <span class="icon hashlink">
       <i class="fas fa-link"></i>
     </span>
   </a>
 </h2>
-<p>Tratteria is designed to facilitate secure and convenient TraT issuance and verification in microservices systems. It involves the Tratteria Service for issuing TraTs, the Tratteria Agent sidecar for verifying TraTs, and Tratteria Kubernetes resources for specifying generation and verification rules for TraTs.</p>
-<img src="/img/docs/introduction/tratteria_workflow.svg" alt="Tratteria Workflow" class="doc-image">
+<p>Tokenetes is designed to facilitate secure and convenient TraT issuance and verification in microservices systems. It involves the Tokenetes Service for issuing TraTs, the Tokenetes Agent sidecar for verifying TraTs, and Tokenetes Kubernetes resources for specifying generation and verification rules for TraTs.</p>
+<img src="/img/docs/introduction/tokenetes_workflow.svg" alt="Tokenetes Workflow" class="doc-image">
 <br>
-<h2 id="tratteria-modes">
-  Tratteria Modes
-  <a href="#tratteria-modes">
+<h2 id="tokenetes-modes">
+  Tokenetes Modes
+  <a href="#tokenetes-modes">
     <span class="icon hashlink">
       <i class="fas fa-link"></i>
     </span>
   </a>
 </h2>
-<p>Tratteria can operate in two modes:</p>
+<p>Tokenetes can operate in two modes:</p>
 <ul>
 <li>
-<p><strong>The Interception Mode</strong>: Enables existing applications to adopt TraTs without (almost) any code changes. It injects Tratteria Agent sidecar containers into Kubernetes pods, and the application continues to operate the way it used to, except the path, query and body of each call are verified against an associated TraT.</p>
+<p><strong>The Interception Mode</strong>: Enables existing applications to adopt TraTs without (almost) any code changes. It injects Tokenetes Agent sidecar containers into Kubernetes pods, and the application continues to operate the way it used to, except the path, query and body of each call are verified against an associated TraT.</p>
 <p>If a service needs to forward a TraT to a downstream service, then it needs to add the <code>Txn-token</code> HTTP header and include the TraT as the value of that header in outbound calls. If a microservice does not make any downstream calls, then it does not need to change.</p>
 </li>
 <li>
-<p><strong>The Delegation Mode</strong>: In this approach, the application explicitly calls the Tratteria Agent within its Kubernetes pod to verify TraTs. As a result, the application needs to make this change to its code to use Tratteria. This mode is more secure than the interception mode, as it avoids scenarios where sidecar could potentially be bypassed. In addition, a delegation based approach allows the application to pack the call parameter information in the Txn-Token header, and can potentially eliminate having to send it separately through query parameters or the body.</p>
+<p><strong>The Delegation Mode</strong>: In this approach, the application explicitly calls the Tokenetes Agent within its Kubernetes pod to verify TraTs. As a result, the application needs to make this change to its code to use Tokenetes. This mode is more secure than the interception mode, as it avoids scenarios where sidecar could potentially be bypassed. In addition, a delegation based approach allows the application to pack the call parameter information in the Txn-Token header, and can potentially eliminate having to send it separately through query parameters or the body.</p>
 <p>This mode is suitable for environments where intercepting incoming requests is not possible or desired, for example, in environments with a service mesh that is already intercepting incoming requests.</p>
 </li>
 </ul>
-<h2 id="tratteria-resource">
-  Tratteria Resource
-  <a href="#tratteria-resource">
+<h2 id="tokenetes-resource">
+  Tokenetes Resource
+  <a href="#tokenetes-resource">
     <span class="icon hashlink">
       <i class="fas fa-link"></i>
     </span>
   </a>
 </h2>
-<p>Tratteria lets you define how to generate the TraT for an external API and how to verify the TraT for the resulting internal requests of the external API using Kubernetes resources. Additionally, it supports specifying access evaluation for external APIs.</p>
-<p>Below is a sample Tratteria Kubernetes resource for the <code>POST api/order/trade/{#stockId}</code> external API. Hover your mouse over the text below to find out more about what each line means:</p>
+<p>Tokenetes lets you define how to generate the TraT for an external API and how to verify the TraT for the resulting internal requests of the external API using Kubernetes resources. Additionally, it supports specifying access evaluation for external APIs.</p>
+<p>Below is a sample Tokenetes Kubernetes resource for the <code>POST api/order/trade/{#stockId}</code> external API. Hover your mouse over the text below to find out more about what each line means:</p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -369,10 +369,10 @@ pre {
 </head>
 <body>
 <pre>
-<code class="yaml"><span class="yaml-key">apiVersion</span>: <span class="yaml-value">tratteria.io/v1alpha1</span>
+<code class="yaml"><span class="yaml-key">apiVersion</span>: <span class="yaml-value">tokenetes.io/v1alpha1</span>
 <span class="yaml-key">kind</span>: <span class="yaml-value">TraT</span>
 <span class="yaml-key">metadata</span>:
-  <span class="tooltip"><span class="yaml-key">name</span>: <span class="yaml-value">trade-api-trat</span><span class="tooltiptext">The name of the TraT used for this external API. This uniquely identifies the TraT type within the Tratteria system.</span></span>
+  <span class="tooltip"><span class="yaml-key">name</span>: <span class="yaml-value">trade-api-trat</span><span class="tooltiptext">The name of the TraT used for this external API. This uniquely identifies the TraT type within the Tokenetes system.</span></span>
   <span class="yaml-key">namespace</span>: <span class="yaml-value">app-dev</span>
 <span class="yaml-key">spec</span>:
   <span class="tooltip"><span class="yaml-key">path</span>: <span class="yaml-value">"api/order/trade/{#stockId}?action={#action}"</span><span class="tooltiptext">The default URL path, which, together with the method field below, results in this type of TraT being generated or validated. The URL may used by external API services or internal microservices.</span></span>
@@ -405,7 +405,7 @@ pre {
     <span class="yaml-key">action</span>:
       <span class="yaml-key">name</span>: <span class="yaml-string">"${body.orderType}"</span>
     <span class="yaml-key">resource</span>:
-      <span class="yaml-key">stockId</span>: <span class="yaml-string">"${stockId}"</span><span class="tooltiptext">Tratteria can call out to an AuthZEN API to evaluate whether execution should proceed. This specifies how to construct the request for access evaluation.</span></span></code>
+      <span class="yaml-key">stockId</span>: <span class="yaml-string">"${stockId}"</span><span class="tooltiptext">Tokenetes can call out to an AuthZEN API to evaluate whether execution should proceed. This specifies how to construct the request for access evaluation.</span></span></code>
 </pre>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -445,8 +445,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 </html>
 <p>The above specifies how to generate purpose and authorization details for the <code>POST api/order/trade/{#stockId}</code> API, and it specifies who (the <code>order</code>, <code>catalog</code>, and <code>stocks</code> services) and how to verify the generated TraT. Additionally, the <code>accessEvaluation</code> section specifies how to perform access evaluations for the API.</p>
-<p>To quickly see Tratteria in action, checkout the <a href="/docs/quickstart">Quickstart Guide</a>.</p>
-<p>To integrate Tratteria into your microservice application, start by <a href="/docs/installation">installing Tratteria</a>, which can be deployed in environments with or without a service mesh.</p>
+<p>To quickly see Tokenetes in action, checkout the <a href="/docs/quickstart">Quickstart Guide</a>.</p>
+<p>To integrate Tokenetes into your microservice application, start by <a href="/docs/installation">installing Tokenetes</a>, which can be deployed in environments with or without a service mesh.</p>
 <h2 id="acknowledgments">
   Acknowledgments
   <a href="#acknowledgments">
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </span>
   </a>
 </h2>
-<p>For inquiries about Tratteria, please email us at: <a href="mailto:tratteria@sgnl.ai">tratteria@sgnl.ai</a></p>
+<p>For inquiries about Tokenetes, please email us at: <a href="mailto:tokenetes@sgnl.ai">tokenetes@sgnl.ai</a></p>
 
 </div>
 
@@ -480,9 +480,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#trat">TraT</a></li>
-    <li><a href="#tratteria-architecture">Tratteria Architecture</a></li>
-    <li><a href="#tratteria-modes">Tratteria Modes</a></li>
-    <li><a href="#tratteria-resource">Tratteria Resource</a></li>
+    <li><a href="#tokenetes-architecture">Tokenetes Architecture</a></li>
+    <li><a href="#tokenetes-modes">Tokenetes Modes</a></li>
+    <li><a href="#tokenetes-resource">Tokenetes Resource</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
     <li><a href="#contact-us">Contact Us</a></li>
   </ul>
@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <footer class="text-light bg-dark" style="padding: 20px 0; text-align: center;">
   <div class="footer">
-    <p>Tratteria is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
+    <p>Tokenetes is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
   </div>
   
   <div class="container">
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
 
-<a class="btn text-light" style="background-color: #000000" href="https://github.com/tratteria">
+<a class="btn text-light" style="background-color: #000000" href="https://github.com/tokenetes">
     
     <span class="icon">
       <i class="fab fa-github"></i>
@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 
 
-<a class="btn text-light" style="background-color: #555555" href="mailto:tratteria@sgnl.ai">
+<a class="btn text-light" style="background-color: #555555" href="mailto:tokenetes@sgnl.ai">
     
     <span class="icon">
       <i class="fas fa-paper-plane"></i>
@@ -543,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     <p style="margin-top: 20px;">
-      &copy; 2024 SGNL.ai, Inc.
+      &copy; 2025 SGNL.ai, Inc.
     </p>
   </div>
 </footer>

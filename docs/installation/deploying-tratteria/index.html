@@ -9,7 +9,7 @@
     <script async src="https://cse.google.com/cse.js?cx=315531be7c52f5156"></script>
     <title>
       
-        Tratteria
+        Tokenetes
       
     </title>
     <link rel="stylesheet" href="/css/style.1df9f62415d297f5c54d2fc02d71b1b122e108253802ae8fa49b752f0120f199.css" integrity="sha256-Hfn2JBXSl/XFTS/ALXGxsSLhCCU4Aq6PpJt1LwEg8Zk=">
@@ -41,7 +41,7 @@
   <div class="container nav-container">
     <div class="navbar-brand">
       <a class="navbar-item text-hide" href="https://tratteria.io/">
-        Tratteria
+        Tokenetes
         
         
           <img src="/img/logos/text-image-logo.svg" class="logo">
@@ -111,7 +111,7 @@
 
 <li >
   / <a href="/docs/">
-    Introduction to Tratteria
+    Introduction to Tokenetes
   </a>
 </li>
 
@@ -120,7 +120,7 @@
 
 <li >
   / <a href="/docs/installation/">
-    Installing Tratteria
+    Installing Tokenetes
   </a>
 </li>
 
@@ -129,7 +129,7 @@
 
 <li  class="is-active">
   / <a href="/docs/installation/deploying-tratteria/">
-    Deploying Tratteria Service
+    Deploying Tokenetes Service
   </a>
 </li>
 
@@ -140,7 +140,7 @@
     
     
     
-    <a href="https://github.com/tratteria/website/blob/main/content/docs/installation/deploying-tratteria.md" class="btn btn-primary" target="_blank">
+    <a href="https://github.com/tokenetes/website/blob/main/content/docs/installation/deploying-tratteria.md" class="btn btn-primary" target="_blank">
       <i class="fas fa-pen"></i>
     </a>
 </div>
@@ -165,7 +165,7 @@
 <nav class="section-nav">
       <p class="menu-label open" id="leftnavToggle">Documentation:</p>      
       <ul class="menu-list" id="leftnav">
-        <li><a  href="/docs/">Introduction to Tratteria</a>
+        <li><a  href="/docs/">Introduction to Tokenetes</a>
         
         </li>
     
@@ -175,7 +175,7 @@
           </ul>
         </li>
     
-        <li><a  href="/docs/installation/">Installing Tratteria</a>
+        <li><a  href="/docs/installation/">Installing Tokenetes</a>
           <ul>
             
             <li>
@@ -183,11 +183,11 @@
             </li>
             
             <li>
-                <a  href="/docs/installation/deploying-tratteria/">Deploying Tratteria Service</a>
+                <a  href="/docs/installation/deploying-tratteria/">Deploying Tokenetes Service</a>
             </li>
             
             <li>
-                <a  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tratteria Agents</a>
+                <a  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tokenetes Agents</a>
             </li>
             
           </ul>
@@ -211,7 +211,7 @@
             </li>
             
             <li>
-                <a  href="/docs/configuration-guide/tratteria-config/">TratteriaConfig</a>
+                <a  href="/docs/configuration-guide/tratteria-config/">TokenetesConfig</a>
             </li>
             
             <li>
@@ -232,20 +232,20 @@
 
         </section>
         <section class="col col-8">
-          <h1 class="title">Deploying Tratteria Service</h1>
+          <h1 class="title">Deploying Tokenetes Service</h1>
           <p class="subtitle"></p>
           
 <div class="content">
-  <p><a href="https://github.com/tratteria/tratteria" target="_blank" rel="noopener">Tratteria Service</a> is an open source <a href="/docs/transaction-token">Transaction Tokens (TraTs)</a> Service, which is responsible for issuing TraTs.</p>
-<p>While <a href="/docs/installation/installing-tconfigd">Tconfigd</a> runs in its own dedicated namespace and is cluster-specific, Tratteria service operates in the application namespace and must be deployed seperately for different application environments or namespaces.</p>
-<p>Please follow the instructions from <a href="https://github.com/tratteria/tratteria/tree/main/kubernetes" target="_blank" rel="noopener">Tratteria&rsquo;s deployment readme</a> to deploy Tratteria service.</p>
-<p>After successfully deploying Tratteria service, you should be able to see running Tratteria service pods in the application namespace. For example, below is the running Tratteria pods from the <a href="https://github.com/tratteria/example-application" target="_blank" rel="noopener">Tratteria example application&rsquo;s</a> dev environment.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pod -n alpha-stocks-dev | grep tratteria
+  <p><a href="https://github.com/tokenetes/tokenetes" target="_blank" rel="noopener">Tokenetes Service</a> is an open source <a href="/docs/transaction-token">Transaction Tokens (TraTs)</a> Service, which is responsible for issuing TraTs.</p>
+<p>While <a href="/docs/installation/installing-tconfigd">Tconfigd</a> runs in its own dedicated namespace and is cluster-specific, Tokenetes service operates in the application namespace and must be deployed seperately for different application environments or namespaces.</p>
+<p>Please follow the instructions from <a href="https://github.com/tokenetes/tokenetes/tree/main/kubernetes" target="_blank" rel="noopener">Tokenetes&rsquo;s deployment readme</a> to deploy Tokenetes service.</p>
+<p>After successfully deploying Tokenetes service, you should be able to see running Tokenetes service pods in the application namespace. For example, below is the running Tokenetes pods from the <a href="https://github.com/tokenetes/example-application" target="_blank" rel="noopener">Tokenetes example application&rsquo;s</a> dev environment.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pod -n alpha-stocks-dev | grep tokenetes
 </span></span></code></pre></div><p>Output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tratteria-7b89b4f498-6kgd2   1/1     Running   <span style="color:#ae81ff">0</span>          22m
-</span></span><span style="display:flex;"><span>tratteria-7b89b4f498-hgxct   1/1     Running   <span style="color:#ae81ff">0</span>          22m
-</span></span><span style="display:flex;"><span>tratteria-7b89b4f498-tlrqd   1/1     Running   <span style="color:#ae81ff">0</span>          22m
-</span></span></code></pre></div><p>Next, proceed to <a href="/docs/installation/setting-up-tratteria-agents">Setting up Tratteria agents</a>, a sidecar for verifying Transaction Tokens (TraTs).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tokenetes-7b89b4f498-6kgd2   1/1     Running   <span style="color:#ae81ff">0</span>          22m
+</span></span><span style="display:flex;"><span>tokenetes-7b89b4f498-hgxct   1/1     Running   <span style="color:#ae81ff">0</span>          22m
+</span></span><span style="display:flex;"><span>tokenetes-7b89b4f498-tlrqd   1/1     Running   <span style="color:#ae81ff">0</span>          22m
+</span></span></code></pre></div><p>Next, proceed to <a href="/docs/installation/setting-up-tokenetes-agents">Setting up Tokenetes agents</a>, a sidecar for verifying Transaction Tokens (TraTs).</p>
 
 </div>
 
@@ -274,7 +274,7 @@
 
 <footer class="text-light bg-dark" style="padding: 20px 0; text-align: center;">
   <div class="footer">
-    <p>Tratteria is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
+    <p>Tokenetes is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
   </div>
   
   <div class="container">
@@ -288,7 +288,7 @@
       
 
 
-<a class="btn text-light" style="background-color: #000000" href="https://github.com/tratteria">
+<a class="btn text-light" style="background-color: #000000" href="https://github.com/tokenetes">
     
     <span class="icon">
       <i class="fab fa-github"></i>
@@ -300,7 +300,7 @@
   </a>
 
 
-<a class="btn text-light" style="background-color: #555555" href="mailto:tratteria@sgnl.ai">
+<a class="btn text-light" style="background-color: #555555" href="mailto:tokenetes@sgnl.ai">
     
     <span class="icon">
       <i class="fas fa-paper-plane"></i>
@@ -316,7 +316,7 @@
     
 
     <p style="margin-top: 20px;">
-      &copy; 2024 SGNL.ai, Inc.
+      &copy; 2025 SGNL.ai, Inc.
     </p>
   </div>
 </footer>

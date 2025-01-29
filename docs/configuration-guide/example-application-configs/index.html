@@ -9,7 +9,7 @@
     <script async src="https://cse.google.com/cse.js?cx=315531be7c52f5156"></script>
     <title>
       
-        Tratteria
+        Tokenetes
       
     </title>
     <link rel="stylesheet" href="/css/style.1df9f62415d297f5c54d2fc02d71b1b122e108253802ae8fa49b752f0120f199.css" integrity="sha256-Hfn2JBXSl/XFTS/ALXGxsSLhCCU4Aq6PpJt1LwEg8Zk=">
@@ -41,7 +41,7 @@
   <div class="container nav-container">
     <div class="navbar-brand">
       <a class="navbar-item text-hide" href="https://tratteria.io/">
-        Tratteria
+        Tokenetes
         
         
           <img src="/img/logos/text-image-logo.svg" class="logo">
@@ -111,7 +111,7 @@
 
 <li >
   / <a href="/docs/">
-    Introduction to Tratteria
+    Introduction to Tokenetes
   </a>
 </li>
 
@@ -140,7 +140,7 @@
     
     
     
-    <a href="https://github.com/tratteria/website/blob/main/content/docs/configuration-guide/example-application-configs.md" class="btn btn-primary" target="_blank">
+    <a href="https://github.com/tokenetes/website/blob/main/content/docs/configuration-guide/example-application-configs.md" class="btn btn-primary" target="_blank">
       <i class="fas fa-pen"></i>
     </a>
 </div>
@@ -165,7 +165,7 @@
 <nav class="section-nav">
       <p class="menu-label open" id="leftnavToggle">Documentation:</p>      
       <ul class="menu-list" id="leftnav">
-        <li><a  href="/docs/">Introduction to Tratteria</a>
+        <li><a  href="/docs/">Introduction to Tokenetes</a>
         
         </li>
     
@@ -175,7 +175,7 @@
           </ul>
         </li>
     
-        <li><a  href="/docs/installation/">Installing Tratteria</a>
+        <li><a  href="/docs/installation/">Installing Tokenetes</a>
           <ul>
             
             <li>
@@ -183,11 +183,11 @@
             </li>
             
             <li>
-                <a  href="/docs/installation/deploying-tratteria/">Deploying Tratteria Service</a>
+                <a  href="/docs/installation/deploying-tratteria/">Deploying Tokenetes Service</a>
             </li>
             
             <li>
-                <a  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tratteria Agents</a>
+                <a  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tokenetes Agents</a>
             </li>
             
           </ul>
@@ -211,7 +211,7 @@
             </li>
             
             <li>
-                <a  href="/docs/configuration-guide/tratteria-config/">TratteriaConfig</a>
+                <a  href="/docs/configuration-guide/tratteria-config/">TokenetesConfig</a>
             </li>
             
             <li>
@@ -236,7 +236,7 @@
           <p class="subtitle"></p>
           
 <div class="content">
-  <p>Below are the Tratteria Kubernetes resources for the <a href="https://github.com/tratteria/example-application" target="_blank" rel="noopener">Tratteria example application</a>. These examples can serve as references when writing the resources for your microservices application.</p>
+  <p>Below are the Tokenetes Kubernetes resources for the <a href="https://github.com/tokenetes/example-application" target="_blank" rel="noopener">Tokenetes example application</a>. These examples can serve as references when writing the resources for your microservices application.</p>
 <h3 id="trats">
   TraTs
   <a href="#trats">
@@ -245,9 +245,9 @@
     </span>
   </a>
 </h3>
-<p>The Tratteria example application has four external APIs; consequently, there are four TraT resources.</p>
+<p>The Tokenetes example application has four external APIs; consequently, there are four TraT resources.</p>
 <p><code>stock-details-api-trat.yaml:</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TraT</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">stock-details-api-trat</span>
@@ -270,7 +270,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">resource</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">stockId</span>: <span style="color:#e6db74">&#34;${stockId}&#34;</span>
 </span></span></code></pre></div><p><code>stock-holdings-api-trat.yaml:</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TraT</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">stock-holdings-api-trat</span>
@@ -287,7 +287,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">action</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;stock-holdings&#34;</span>
 </span></span></code></pre></div><p><code>stock-search-api-trat.yaml:</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TraT</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">stock-search-api-trat</span>
@@ -310,7 +310,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">resource</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">query</span>: <span style="color:#e6db74">&#34;${queryParameters.query}&#34;</span>
 </span></span></code></pre></div><p><code>stock-trade-api-trat.yaml:</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TraT</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">stock-trade-api-trat</span>
@@ -350,7 +350,7 @@
 </h2>
 <p>There are two services, the stocks and order service, that verify TraTs in the example application; consequently, there are two TraTExclusion resources.</p>
 <p><code>order-service-tratexcl.yaml</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TraTExclusion</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">order-service-tratexcl</span>
@@ -361,7 +361,7 @@
 </span></span><span style="display:flex;"><span>    - <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;/health&#34;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">method</span>: <span style="color:#e6db74">&#34;GET&#34;</span>
 </span></span></code></pre></div><p><code>stocks-service-tratexcl.yaml:</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TraTExclusion</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">stocks-service-tratexcl</span>
@@ -371,23 +371,23 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">endpoints</span>:
 </span></span><span style="display:flex;"><span>    - <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;/health&#34;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">method</span>: <span style="color:#e6db74">&#34;GET&#34;</span>
-</span></span></code></pre></div><h3 id="tratteriaconfig">
-  TratteriaConfig
-  <a href="#tratteriaconfig">
+</span></span></code></pre></div><h3 id="tokenetesconfig">
+  TokenetesConfig
+  <a href="#tokenetesconfig">
     <span class="icon hashlink">
       <i class="fas fa-link"></i>
     </span>
   </a>
 </h3>
-<p><code>tratteriacfg.yaml:</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TratteriaConfig</span>
+<p><code>tokenetescfg.yaml:</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TokenetesConfig</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">alpha-stocks-tratteriacfg</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">alpha-stocks-tokenetescfg</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">alpha-stocks-dev</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">token</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">issuer</span>: <span style="color:#e6db74">&#34;https://alphastocks.com/tratteria&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">issuer</span>: <span style="color:#e6db74">&#34;https://alphastocks.com/tokenetes&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">audience</span>: <span style="color:#e6db74">&#34;https://alphastocks.com/&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">lifeTime</span>: <span style="color:#e6db74">&#34;15s&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">subjectTokens</span>:
@@ -428,7 +428,7 @@
     </li>
     <li><a href="#tratexclusion">TraTExclusion</a>
       <ul>
-        <li><a href="#tratteriaconfig">TratteriaConfig</a></li>
+        <li><a href="#tokenetesconfig">TokenetesConfig</a></li>
       </ul>
     </li>
   </ul>
@@ -448,7 +448,7 @@
 
 <footer class="text-light bg-dark" style="padding: 20px 0; text-align: center;">
   <div class="footer">
-    <p>Tratteria is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
+    <p>Tokenetes is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
   </div>
   
   <div class="container">
@@ -462,7 +462,7 @@
       
 
 
-<a class="btn text-light" style="background-color: #000000" href="https://github.com/tratteria">
+<a class="btn text-light" style="background-color: #000000" href="https://github.com/tokenetes">
     
     <span class="icon">
       <i class="fab fa-github"></i>
@@ -474,7 +474,7 @@
   </a>
 
 
-<a class="btn text-light" style="background-color: #555555" href="mailto:tratteria@sgnl.ai">
+<a class="btn text-light" style="background-color: #555555" href="mailto:tokenetes@sgnl.ai">
     
     <span class="icon">
       <i class="fas fa-paper-plane"></i>
@@ -490,7 +490,7 @@
     
 
     <p style="margin-top: 20px;">
-      &copy; 2024 SGNL.ai, Inc.
+      &copy; 2025 SGNL.ai, Inc.
     </p>
   </div>
 </footer>

@@ -9,7 +9,7 @@
     <script async src="https://cse.google.com/cse.js?cx=315531be7c52f5156"></script>
     <title>
       
-        Tratteria
+        Tokenetes
       
     </title>
     <link rel="stylesheet" href="/css/style.1df9f62415d297f5c54d2fc02d71b1b122e108253802ae8fa49b752f0120f199.css" integrity="sha256-Hfn2JBXSl/XFTS/ALXGxsSLhCCU4Aq6PpJt1LwEg8Zk=">
@@ -41,7 +41,7 @@
   <div class="container nav-container">
     <div class="navbar-brand">
       <a class="navbar-item text-hide" href="https://tratteria.io/">
-        Tratteria
+        Tokenetes
         
         
           <img src="/img/logos/text-image-logo.svg" class="logo">
@@ -111,7 +111,7 @@
 
 <li >
   / <a href="/docs/">
-    Introduction to Tratteria
+    Introduction to Tokenetes
   </a>
 </li>
 
@@ -129,7 +129,7 @@
 
 <li  class="is-active">
   / <a href="/docs/configuration-guide/tratteria-config/">
-    TratteriaConfig
+    TokenetesConfig
   </a>
 </li>
 
@@ -140,7 +140,7 @@
     
     
     
-    <a href="https://github.com/tratteria/website/blob/main/content/docs/configuration-guide/tratteria-config.md" class="btn btn-primary" target="_blank">
+    <a href="https://github.com/tokenetes/website/blob/main/content/docs/configuration-guide/tratteria-config.md" class="btn btn-primary" target="_blank">
       <i class="fas fa-pen"></i>
     </a>
 </div>
@@ -165,7 +165,7 @@
 <nav class="section-nav">
       <p class="menu-label open" id="leftnavToggle">Documentation:</p>      
       <ul class="menu-list" id="leftnav">
-        <li><a  href="/docs/">Introduction to Tratteria</a>
+        <li><a  href="/docs/">Introduction to Tokenetes</a>
         
         </li>
     
@@ -175,7 +175,7 @@
           </ul>
         </li>
     
-        <li><a  href="/docs/installation/">Installing Tratteria</a>
+        <li><a  href="/docs/installation/">Installing Tokenetes</a>
           <ul>
             
             <li>
@@ -183,11 +183,11 @@
             </li>
             
             <li>
-                <a  href="/docs/installation/deploying-tratteria/">Deploying Tratteria Service</a>
+                <a  href="/docs/installation/deploying-tratteria/">Deploying Tokenetes Service</a>
             </li>
             
             <li>
-                <a  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tratteria Agents</a>
+                <a  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tokenetes Agents</a>
             </li>
             
           </ul>
@@ -211,7 +211,7 @@
             </li>
             
             <li>
-                <a  href="/docs/configuration-guide/tratteria-config/">TratteriaConfig</a>
+                <a  href="/docs/configuration-guide/tratteria-config/">TokenetesConfig</a>
             </li>
             
             <li>
@@ -232,20 +232,20 @@
 
         </section>
         <section class="col col-8">
-          <h1 class="title">TratteriaConfig</h1>
+          <h1 class="title">TokenetesConfig</h1>
           <p class="subtitle"></p>
           
 <div class="content">
-  <p>The TratteriaConfig resource defines general configuration settings that apply to all APIs and TraTs within a specified Kubernetes namespace.</p>
+  <p>The TokenetesConfig resource defines general configuration settings that apply to all APIs and TraTs within a specified Kubernetes namespace.</p>
 <p>Let&rsquo;s delve into the details of TraTs by examining an example.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tratteria.io/v1alpha1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TratteriaConfig</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">tokenetes.io/v1alpha1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">TokenetesConfig</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">alpha-stocks-tratteriacfg</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">alpha-stocks-tokenetescfg</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">alpha-stocks-dev</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">token</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">issuer</span>: <span style="color:#e6db74">&#34;https://alphastocks.com/tratteria&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">issuer</span>: <span style="color:#e6db74">&#34;https://alphastocks.com/tokenetes&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">audience</span>: <span style="color:#e6db74">&#34;https://alphastocks.com/&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">lifeTime</span>: <span style="color:#e6db74">&#34;15s&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">subjectTokens</span>:
@@ -265,7 +265,7 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">value</span>: <span style="color:#e6db74">&#34;${AUTHORIZATION_API_BEARER_TOKEN}&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">tokenGenerationAuthorizedServiceIds</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;spiffe://dev.alphastocks.com/gateway&#34;</span>
-</span></span></code></pre></div><p>TratteriaConfig includes the following sections:</p>
+</span></span></code></pre></div><p>TokenetesConfig includes the following sections:</p>
 <h5 id="token-required">
   token (Required)
   <a href="#token-required">
@@ -278,7 +278,7 @@
 <ul>
 <li>
 <p><strong>issuer (Required)</strong>:
-Represents the Tratteria server that issues TraTs, used as the <code>iss</code> claim in the generated TraTs.</p>
+Represents the Tokenetes server that issues TraTs, used as the <code>iss</code> claim in the generated TraTs.</p>
 </li>
 <li>
 <p><strong>audience (Required)</strong>:
@@ -297,7 +297,7 @@ Defines the duration for which the generated TraTs are valid. The value chosen s
     </span>
   </a>
 </h5>
-<p>Subject tokens are required for uniquely identifying the individual, entity, or user involved in a transaction. The TraT token request includes a subject token. Tratteria validates the subject token and determines the value to specify as the <code>sub</code> of the issued TraT. As of now, Tratteria supports OIDC ID tokens and self-signed JWTs as subject tokens. Configuration for at least one method should be provided.</p>
+<p>Subject tokens are required for uniquely identifying the individual, entity, or user involved in a transaction. The TraT token request includes a subject token. Tokenetes validates the subject token and determines the value to specify as the <code>sub</code> of the issued TraT. As of now, Tokenetes supports OIDC ID tokens and self-signed JWTs as subject tokens. Configuration for at least one method should be provided.</p>
 <ul>
 <li>
 <p><strong>OIDC (Optional):</strong><br>
@@ -317,20 +317,20 @@ The URL of the OIDC provider.</p>
 The claim or field of the OIDC ID token to be used as <code>sub</code> in the issued TraT.</p>
 </li>
 </ul>
-<p><a href="https://github.com/tratteria/example-application" target="_blank" rel="noopener">Tratteria example application</a> utilizes OIDC ID tokens for subject tokens. Refer to it for guidance on configuration and its usage as the subject token in the TraT request.</p>
+<p><a href="https://github.com/tokenetes/example-application" target="_blank" rel="noopener">Tokenetes example application</a> utilizes OIDC ID tokens for subject tokens. Refer to it for guidance on configuration and its usage as the subject token in the TraT request.</p>
 </li>
 <li>
 <p><strong>selfSigned (Optional):</strong><br>
 Self-signed JWTs can also be used as subject tokens. In this case, the requester must set the <code>subject_token_type</code> in the TraT token request to <code>urn:ietf:params:oauth:token-type:self_signed</code>. The self-signed JWTs must contain the following claims:</p>
 <ul>
 <li>
-<p><strong>iss:</strong> The unique identifier of the requesting workload. Tratteria utilizes this value in determining the <code>req_wl</code> value in the issued TraT.</p>
+<p><strong>iss:</strong> The unique identifier of the requesting workload. Tokenetes utilizes this value in determining the <code>req_wl</code> value in the issued TraT.</p>
 </li>
 <li>
-<p><strong>sub:</strong> The subject for whom the TraT is being requested. Tratteria use this value for the <code>sub</code> value in the issued TraT.</p>
+<p><strong>sub:</strong> The subject for whom the TraT is being requested. Tokenetes use this value for the <code>sub</code> value in the issued TraT.</p>
 </li>
 <li>
-<p><strong>aud:</strong> The unique identifier of the Tratteria. Tratteria verifies that this value matches its configured <code>issuer</code> value.</p>
+<p><strong>aud:</strong> The unique identifier of the Tokenetes. Tokenetes verifies that this value matches its configured <code>issuer</code> value.</p>
 </li>
 <li>
 <p><strong>iat:</strong> The time at which the self-signed JWT was created.</p>
@@ -340,7 +340,7 @@ Self-signed JWTs can also be used as subject tokens. In this case, the requester
 </li>
 </ul>
 <p>Additionally, the self-signed JWTs may contain other claims.</p>
-<p>Tratteria extracts the <code>sub</code> claim of the self-signed JWTs into the <code>sub</code> claim of the issued TraT.</p>
+<p>Tokenetes extracts the <code>sub</code> claim of the self-signed JWTs into the <code>sub</code> claim of the issued TraT.</p>
 <p>This is an optional configuration. When configured, it includes the following:</p>
 <ul>
 <li>
@@ -363,7 +363,7 @@ The URL where the JSON Web Key Set (JWKS) can be found for validating self-signe
     </span>
   </a>
 </h5>
-<p>Tratteria supports access evaluation of transactions before issuing TraTs. Tratteria supports <a href="https://openid.github.io/authzen/#name-access-evaluations-api" target="_blank" rel="noopener">AuthZen</a> access-evaluation API.</p>
+<p>Tokenetes supports access evaluation of transactions before issuing TraTs. Tokenetes supports <a href="https://openid.github.io/authzen/#name-access-evaluations-api" target="_blank" rel="noopener">AuthZen</a> access-evaluation API.</p>
 <p>This is an optional configuration. When configured, it requires the following:</p>
 <ul>
 <li>
@@ -410,7 +410,7 @@ Specifies how to construct the request body for the access-evaluation API using 
     </span>
   </a>
 </h5>
-<p>Use environment variables to securely handle sensitive information, such as API tokens. These variables are automatically resolved during runtime at Tratteria service. Tratteria service reads the environment variables without writing them to the configuration file.</p>
+<p>Use environment variables to securely handle sensitive information, such as API tokens. These variables are automatically resolved during runtime at Tokenetes service. Tokenetes service reads the environment variables without writing them to the configuration file.</p>
 
 </div>
 
@@ -447,7 +447,7 @@ Specifies how to construct the request body for the access-evaluation API using 
 
 <footer class="text-light bg-dark" style="padding: 20px 0; text-align: center;">
   <div class="footer">
-    <p>Tratteria is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
+    <p>Tokenetes is an open-source project sponsored by <a href="https://www.sgnl.ai" target="_blank">SGNL.ai</a></p>
   </div>
   
   <div class="container">
@@ -461,7 +461,7 @@ Specifies how to construct the request body for the access-evaluation API using 
       
 
 
-<a class="btn text-light" style="background-color: #000000" href="https://github.com/tratteria">
+<a class="btn text-light" style="background-color: #000000" href="https://github.com/tokenetes">
     
     <span class="icon">
       <i class="fab fa-github"></i>
@@ -473,7 +473,7 @@ Specifies how to construct the request body for the access-evaluation API using 
   </a>
 
 
-<a class="btn text-light" style="background-color: #555555" href="mailto:tratteria@sgnl.ai">
+<a class="btn text-light" style="background-color: #555555" href="mailto:tokenetes@sgnl.ai">
     
     <span class="icon">
       <i class="fas fa-paper-plane"></i>
@@ -489,7 +489,7 @@ Specifies how to construct the request body for the access-evaluation API using 
     
 
     <p style="margin-top: 20px;">
-      &copy; 2024 SGNL.ai, Inc.
+      &copy; 2025 SGNL.ai, Inc.
     </p>
   </div>
 </footer>
