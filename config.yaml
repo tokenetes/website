@@ -1,4 +1,4 @@
-title: Tratteria
+title: Tokenetes
 baseURL: https://tratteria.io/
 
 disableKinds:
@@ -29,22 +29,22 @@ markup:
     style: paraiso-dark
 
 params:
-  projectName: Tratteria
+  projectName: Tokenetes
   font_awesome_version: 5.12.0
   description: Transaction Tokens Service
   favicon: favicon.svg
-  repositoryUrl: 'https://github.com/tratteria/website'
+  repositoryUrl: 'https://github.com/tokenetes/website'
   contentDir: /content/
   logos:
     navbar: text-image-logo.svg
   social:
     - name: GitHub
       color: '#000000'
-      url: 'https://github.com/tratteria'
+      url: 'https://github.com/tokenetes'
       icon: fab fa-github
     - name: Email
       color: '#555555'
-      url: 'mailto:tratteria@sgnl.ai'
+      url: 'mailto:tokenetes@sgnl.ai'
       icon: fas fa-paper-plane
   fonts:
     - name: Roboto

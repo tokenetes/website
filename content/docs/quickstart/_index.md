@@ -4,18 +4,18 @@ weight: 2
 toc: true
 ---
 
-Welcome to the Tratteria quickstart guide. This tutorial will guide you through setting up the sample application and observing Tratteria in action.
+Welcome to the Tokenetes quickstart guide. This tutorial will guide you through setting up the sample application and observing Tokenetes in action.
 
-Tratteria is an open source implementation of the [IETF OAuth Transaction Tokens (TraTs) draft specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/).
+Tokenetes is an open source implementation of the [IETF OAuth Transaction Tokens (TraTs) draft specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/).
 
 ## Deployment
 
-Follow the instructions in the [README](https://github.com/tratteria/example-application/blob/main/README.md) of the example application to deploy the application.
+Follow the instructions in the [README](https://github.com/tokenetes/example-application/blob/main/README.md) of the example application to deploy the application.
 
-After successful deployment, you will see a running `tconfigd` pod in the `tratteria-system` namespace:
+After successful deployment, you will see a running `tconfigd` pod in the `tokenetes-system` namespace:
 
 ```bash
-kubectl get pod -n tratteria-system
+kubectl get pod -n tokenetes-system
 ```
 
 Output:
@@ -25,23 +25,23 @@ NAME                        READY   STATUS    RESTARTS   AGE
 tconfigd-7c94fd755b-b5tjh   1/1     Running   0          49s
 ```
 
-You will also see `Tratteria` service pods in the application namespace, which is `alpha-stocks-dev`:
+You will also see `Tokenetes` service pods in the application namespace, which is `alpha-stocks-dev`:
 
 ```bash
-kubectl get pod -n alpha-stocks-dev | grep tratteria
+kubectl get pod -n alpha-stocks-dev | grep tokenetes
 ```
 
 Output:
 
 ```bash
-tratteria-7789594688-b8jjq   1/1     Running   0          67s
-tratteria-7789594688-g565s   1/1     Running   0          67s
-tratteria-7789594688-gjs2r   1/1     Running   0          67s
+tokenetes-7789594688-b8jjq   1/1     Running   0          67s
+tokenetes-7789594688-g565s   1/1     Running   0          67s
+tokenetes-7789594688-gjs2r   1/1     Running   0          67s
 ```
 
 ## TraTs
 
-The example application has four APIs, and TraTs for each API can be found [here](https://github.com/tratteria/example-application/tree/main/deploy/alpha-stocks-dev/trats).
+The example application has four APIs, and TraTs for each API can be found [here](https://github.com/tokenetes/example-application/tree/main/deploy/alpha-stocks-dev/trats).
 
 These TraTs are applied when the application is deployed. You can list them with the following command:
 
@@ -72,7 +72,7 @@ Name:         stock-trade-api-trat
 Namespace:    alpha-stocks-dev
 Labels:       <none>
 Annotations:  <none>
-API Version:  tratteria.io/v1alpha1
+API Version:  tokenetes.io/v1alpha1
 Kind:         TraT
 Metadata:
   Creation Timestamp:  2024-07-22T20:36:14Z
@@ -113,7 +113,7 @@ Events:
 
 To see TraTs in action, launch the example application frontend, which interactively shows the generated TraTs for each invoked external API.
 
-1. Launch the frontend client application as per the example application [README](https://github.com/tratteria/example-application/blob/main/README.md).
+1. Launch the frontend client application as per the example application [README](https://github.com/tokenetes/example-application/blob/main/README.md).
 
 2. Enter [http://localhost:4200/](http://localhost:4200/) in your browser.
 
@@ -121,7 +121,7 @@ To see TraTs in action, launch the example application frontend, which interacti
 
 <img src="/img/docs/introduction/ui-dex-auth-page.png" alt="What Is a TraT" class="doc-image">
 
-4. Authenticate with any user from [here](https://github.com/tratteria/example-application/blob/main/deploy/alpha-stocks-dev/configs/dex-config.yaml) with the default password of `password123`. For example, you can use the username `sherlock@detect.com` with password `password123`.
+4. Authenticate with any user from [here](https://github.com/tokenetes/example-application/blob/main/deploy/alpha-stocks-dev/configs/dex-config.yaml) with the default password of `password123`. For example, you can use the username `sherlock@detect.com` with password `password123`.
 
 5. After authentication, as you navigate through the application, you will see the generated TraTs for the invoked external APIs. Below is a sample page:
 
@@ -129,4 +129,4 @@ To see TraTs in action, launch the example application frontend, which interacti
 
 ## Next Steps
 
-To set up TraTs in your own microservices application, proceed to [Installing Tratteria](/docs/installation).
+To set up TraTs in your own microservices application, proceed to [Installing Tokenetes](/docs/installation).

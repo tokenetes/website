@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Tratteria"
+title: "Introduction to Tokenetes"
 toc: true
 weight: 1
 ---
@@ -12,7 +12,7 @@ weight: 1
 }
 </style>
 
-Welcome to the documentation for Tratteria, an open-source [Transaction Tokens](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/) (TraTs) Service. This guide will help you understand what Tratteria is, how it works, and how to implement it in your microservices architecture.
+Welcome to the documentation for Tokenetes, an open-source [Transaction Tokens](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/) (TraTs) Service. This guide will help you understand what Tokenetes is, how it works, and how to implement it in your microservices architecture.
 
 ## TraT
 
@@ -102,31 +102,31 @@ function closeModal() {
 }
 </script>
 
-## Tratteria Architecture
+## Tokenetes Architecture
 
-Tratteria is designed to facilitate secure and convenient TraT issuance and verification in microservices systems. It involves the Tratteria Service for issuing TraTs, the Tratteria Agent sidecar for verifying TraTs, and Tratteria Kubernetes resources for specifying generation and verification rules for TraTs.
+Tokenetes is designed to facilitate secure and convenient TraT issuance and verification in microservices systems. It involves the Tokenetes Service for issuing TraTs, the Tokenetes Agent sidecar for verifying TraTs, and Tokenetes Kubernetes resources for specifying generation and verification rules for TraTs.
 
-<img src="/img/docs/introduction/tratteria_workflow.svg" alt="Tratteria Workflow" class="doc-image">
+<img src="/img/docs/introduction/tokenetes_workflow.svg" alt="Tokenetes Workflow" class="doc-image">
 
 <br>
 
-## Tratteria Modes
+## Tokenetes Modes
 
-Tratteria can operate in two modes:
+Tokenetes can operate in two modes:
 
-* **The Interception Mode**: Enables existing applications to adopt TraTs without (almost) any code changes. It injects Tratteria Agent sidecar containers into Kubernetes pods, and the application continues to operate the way it used to, except the path, query and body of each call are verified against an associated TraT.
+* **The Interception Mode**: Enables existing applications to adopt TraTs without (almost) any code changes. It injects Tokenetes Agent sidecar containers into Kubernetes pods, and the application continues to operate the way it used to, except the path, query and body of each call are verified against an associated TraT.
 
   If a service needs to forward a TraT to a downstream service, then it needs to add the `Txn-token` HTTP header and include the TraT as the value of that header in outbound calls. If a microservice does not make any downstream calls, then it does not need to change.
 
-* **The Delegation Mode**: In this approach, the application explicitly calls the Tratteria Agent within its Kubernetes pod to verify TraTs. As a result, the application needs to make this change to its code to use Tratteria. This mode is more secure than the interception mode, as it avoids scenarios where sidecar could potentially be bypassed. In addition, a delegation based approach allows the application to pack the call parameter information in the Txn-Token header, and can potentially eliminate having to send it separately through query parameters or the body.
+* **The Delegation Mode**: In this approach, the application explicitly calls the Tokenetes Agent within its Kubernetes pod to verify TraTs. As a result, the application needs to make this change to its code to use Tokenetes. This mode is more secure than the interception mode, as it avoids scenarios where sidecar could potentially be bypassed. In addition, a delegation based approach allows the application to pack the call parameter information in the Txn-Token header, and can potentially eliminate having to send it separately through query parameters or the body.
 
   This mode is suitable for environments where intercepting incoming requests is not possible or desired, for example, in environments with a service mesh that is already intercepting incoming requests.
 
-## Tratteria Resource
+## Tokenetes Resource
 
-Tratteria lets you define how to generate the TraT for an external API and how to verify the TraT for the resulting internal requests of the external API using Kubernetes resources. Additionally, it supports specifying access evaluation for external APIs.
+Tokenetes lets you define how to generate the TraT for an external API and how to verify the TraT for the resulting internal requests of the external API using Kubernetes resources. Additionally, it supports specifying access evaluation for external APIs.
 
-Below is a sample Tratteria Kubernetes resource for the `POST api/order/trade/{#stockId}` external API. Hover your mouse over the text below to find out more about what each line means:
+Below is a sample Tokenetes Kubernetes resource for the `POST api/order/trade/{#stockId}` external API. Hover your mouse over the text below to find out more about what each line means:
 
 <!DOCTYPE html>
 <html lang="en">
@@ -184,10 +184,10 @@ pre {
 </head>
 <body>
 <pre>
-<code class="yaml"><span class="yaml-key">apiVersion</span>: <span class="yaml-value">tratteria.io/v1alpha1</span>
+<code class="yaml"><span class="yaml-key">apiVersion</span>: <span class="yaml-value">tokenetes.io/v1alpha1</span>
 <span class="yaml-key">kind</span>: <span class="yaml-value">TraT</span>
 <span class="yaml-key">metadata</span>:
-  <span class="tooltip"><span class="yaml-key">name</span>: <span class="yaml-value">trade-api-trat</span><span class="tooltiptext">The name of the TraT used for this external API. This uniquely identifies the TraT type within the Tratteria system.</span></span>
+  <span class="tooltip"><span class="yaml-key">name</span>: <span class="yaml-value">trade-api-trat</span><span class="tooltiptext">The name of the TraT used for this external API. This uniquely identifies the TraT type within the Tokenetes system.</span></span>
   <span class="yaml-key">namespace</span>: <span class="yaml-value">app-dev</span>
 <span class="yaml-key">spec</span>:
   <span class="tooltip"><span class="yaml-key">path</span>: <span class="yaml-value">"api/order/trade/{#stockId}?action={#action}"</span><span class="tooltiptext">The default URL path, which, together with the method field below, results in this type of TraT being generated or validated. The URL may used by external API services or internal microservices.</span></span>
@@ -220,7 +220,7 @@ pre {
     <span class="yaml-key">action</span>:
       <span class="yaml-key">name</span>: <span class="yaml-string">"${body.orderType}"</span>
     <span class="yaml-key">resource</span>:
-      <span class="yaml-key">stockId</span>: <span class="yaml-string">"${stockId}"</span><span class="tooltiptext">Tratteria can call out to an AuthZEN API to evaluate whether execution should proceed. This specifies how to construct the request for access evaluation.</span></span></code>
+      <span class="yaml-key">stockId</span>: <span class="yaml-string">"${stockId}"</span><span class="tooltiptext">Tokenetes can call out to an AuthZEN API to evaluate whether execution should proceed. This specifies how to construct the request for access evaluation.</span></span></code>
 </pre>
 
 <script>
@@ -263,9 +263,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 The above specifies how to generate purpose and authorization details for the `POST api/order/trade/{#stockId}` API, and it specifies who (the `order`, `catalog`, and `stocks` services) and how to verify the generated TraT. Additionally, the `accessEvaluation` section specifies how to perform access evaluations for the API.
 
-To quickly see Tratteria in action, checkout the [Quickstart Guide](/docs/quickstart).
+To quickly see Tokenetes in action, checkout the [Quickstart Guide](/docs/quickstart).
 
-To integrate Tratteria into your microservice application, start by [installing Tratteria](/docs/installation), which can be deployed in environments with or without a service mesh.
+To integrate Tokenetes into your microservice application, start by [installing Tokenetes](/docs/installation), which can be deployed in environments with or without a service mesh.
 
 ## Acknowledgments
 
@@ -273,4 +273,4 @@ This documentation and the underlying technology are based on the concepts and [
 
 ## Contact Us
 
-For inquiries about Tratteria, please email us at: [tratteria@sgnl.ai](mailto:tratteria@sgnl.ai)
+For inquiries about Tokenetes, please email us at: [tokenetes@sgnl.ai](mailto:tokenetes@sgnl.ai)

@@ -4,12 +4,12 @@ weight: 1
 toc: true
 ---
 
-[Tconfigd](https://github.com/tratteria/tconfigd) is a central daemon that manages Tratteria configurations. To get started with Tratteria, first install Tconfigd following the instructions from [Tconfigd's installation readme](https://github.com/tratteria/tconfigd/tree/main/installation).
+[Tconfigd](https://github.com/tokenetes/tconfigd) is a central daemon that manages Tokenetes configurations. To get started with Tokenetes, first install Tconfigd following the instructions from [Tconfigd's installation readme](https://github.com/tokenetes/tconfigd/tree/main/installation).
 
-After successfully installing Tconfigd, you should be able to see a running Tconfigd pod in the tratteria-system namespace.
+After successfully installing Tconfigd, you should be able to see a running Tconfigd pod in the tokenetes-system namespace.
 
 ```bash
-kubectl get pod -n tratteria-system
+kubectl get pod -n tokenetes-system
 ```
 
 Output:
@@ -19,4 +19,4 @@ NAME                        READY   STATUS    RESTARTS   AGE
 tconfigd-85c5697c9b-4lx4s   1/1     Running   0          88s
 ```
 
-Next, proceed to [deploy Tratteria service](/docs/installation/deploying-tratteria), an open source [Transaction Tokens (TraTs)](/docs/transaction-token) Service.
+Next, proceed to [deploy Tokenetes service](/docs/installation/deploying-tokenetes), an open source [Transaction Tokens (TraTs)](/docs/transaction-token) Service.

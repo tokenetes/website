@@ -1,22 +1,22 @@
 ---
-title: "TratteriaConfig"
+title: "TokenetesConfig"
 weight: 3
 toc: true
 ---
 
-The TratteriaConfig resource defines general configuration settings that apply to all APIs and TraTs within a specified Kubernetes namespace.
+The TokenetesConfig resource defines general configuration settings that apply to all APIs and TraTs within a specified Kubernetes namespace.
 
 Let's delve into the details of TraTs by examining an example.
 
 ```yaml
-apiVersion: tratteria.io/v1alpha1
-kind: TratteriaConfig
+apiVersion: tokenetes.io/v1alpha1
+kind: TokenetesConfig
 metadata:
-  name: alpha-stocks-tratteriacfg
+  name: alpha-stocks-tokenetescfg
   namespace: alpha-stocks-dev
 spec:
   token:
-    issuer: "https://alphastocks.com/tratteria"
+    issuer: "https://alphastocks.com/tokenetes"
     audience: "https://alphastocks.com/"
     lifeTime: "15s"
   subjectTokens:
@@ -38,14 +38,14 @@ spec:
       - "spiffe://dev.alphastocks.com/gateway"
 ```
 
-TratteriaConfig includes the following sections:
+TokenetesConfig includes the following sections:
 
 ##### token (Required)
 
 Configures the TraTs and includes the following parameters:
 
   - **issuer (Required)**:
-    Represents the Tratteria server that issues TraTs, used as the `iss` claim in the generated TraTs.
+    Represents the Tokenetes server that issues TraTs, used as the `iss` claim in the generated TraTs.
     
   - **audience (Required)**:
     Represents the intended recipient of the TraTs, used as the `aud` claim in the generated TraTs.
@@ -55,7 +55,7 @@ Configures the TraTs and includes the following parameters:
 
 ##### subjectTokens (Required)
 
-Subject tokens are required for uniquely identifying the individual, entity, or user involved in a transaction. The TraT token request includes a subject token. Tratteria validates the subject token and determines the value to specify as the `sub` of the issued TraT. As of now, Tratteria supports OIDC ID tokens and self-signed JWTs as subject tokens. Configuration for at least one method should be provided.
+Subject tokens are required for uniquely identifying the individual, entity, or user involved in a transaction. The TraT token request includes a subject token. Tokenetes validates the subject token and determines the value to specify as the `sub` of the issued TraT. As of now, Tokenetes supports OIDC ID tokens and self-signed JWTs as subject tokens. Configuration for at least one method should be provided.
 
   - **OIDC (Optional):**  
     OIDC ID tokens serve as a means to uniquely identify users within an OpenID Connect (OIDC) framework. When OIDC ID tokens are used in TraT token requests as subject tokens, the requester must set the `subject_token_type` to `urn:ietf:params:oauth:token-type:id_token`.
@@ -71,16 +71,16 @@ Subject tokens are required for uniquely identifying the individual, entity, or 
       - **subjectField (Required)**  
         The claim or field of the OIDC ID token to be used as `sub` in the issued TraT.
 
-    [Tratteria example application](https://github.com/tratteria/example-application) utilizes OIDC ID tokens for subject tokens. Refer to it for guidance on configuration and its usage as the subject token in the TraT request.
+    [Tokenetes example application](https://github.com/tokenetes/example-application) utilizes OIDC ID tokens for subject tokens. Refer to it for guidance on configuration and its usage as the subject token in the TraT request.
 
   - **selfSigned (Optional):**  
     Self-signed JWTs can also be used as subject tokens. In this case, the requester must set the `subject_token_type` in the TraT token request to `urn:ietf:params:oauth:token-type:self_signed`. The self-signed JWTs must contain the following claims:
 
-      - **iss:** The unique identifier of the requesting workload. Tratteria utilizes this value in determining the `req_wl` value in the issued TraT.
+      - **iss:** The unique identifier of the requesting workload. Tokenetes utilizes this value in determining the `req_wl` value in the issued TraT.
 
-      - **sub:** The subject for whom the TraT is being requested. Tratteria use this value for the `sub` value in the issued TraT.
+      - **sub:** The subject for whom the TraT is being requested. Tokenetes use this value for the `sub` value in the issued TraT.
 
-      - **aud:** The unique identifier of the Tratteria. Tratteria verifies that this value matches its configured `issuer` value.
+      - **aud:** The unique identifier of the Tokenetes. Tokenetes verifies that this value matches its configured `issuer` value.
 
       - **iat:** The time at which the self-signed JWT was created.
 
@@ -88,7 +88,7 @@ Subject tokens are required for uniquely identifying the individual, entity, or 
 
       Additionally, the self-signed JWTs may contain other claims.
 
-      Tratteria extracts the `sub` claim of the self-signed JWTs into the `sub` claim of the issued TraT.
+      Tokenetes extracts the `sub` claim of the self-signed JWTs into the `sub` claim of the issued TraT.
       
     This is an optional configuration. When configured, it includes the following:
 
@@ -102,7 +102,7 @@ Subject tokens are required for uniquely identifying the individual, entity, or 
 
 ##### accessEvaluationAPI (Optional)
 
-Tratteria supports access evaluation of transactions before issuing TraTs. Tratteria supports [AuthZen](https://openid.github.io/authzen/#name-access-evaluations-api) access-evaluation API.
+Tokenetes supports access evaluation of transactions before issuing TraTs. Tokenetes supports [AuthZen](https://openid.github.io/authzen/#name-access-evaluations-api) access-evaluation API.
 
 This is an optional configuration. When configured, it requires the following:
 
@@ -131,4 +131,4 @@ SPIFFE IDs of services authorized to request TraTs. This list should include the
 
 ##### Environment Variables
 
-Use environment variables to securely handle sensitive information, such as API tokens. These variables are automatically resolved during runtime at Tratteria service. Tratteria service reads the environment variables without writing them to the configuration file.
+Use environment variables to securely handle sensitive information, such as API tokens. These variables are automatically resolved during runtime at Tokenetes service. Tokenetes service reads the environment variables without writing them to the configuration file.
