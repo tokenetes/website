@@ -29,10 +29,10 @@ The external API specification section specifies the external API for which the 
     
     <item>
       <title>Deploying Tokenetes Service</title>
-      <link>https://tratteria.io/docs/installation/deploying-tratteria/</link>
+      <link>https://tratteria.io/docs/installation/deploying-tokenetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/installation/deploying-tratteria/</guid>
+      <guid>https://tratteria.io/docs/installation/deploying-tokenetes/</guid>
       <description>Tokenetes Service is an open source Transaction Tokens (TraTs) Service, which is responsible for issuing TraTs.
 While Tconfigd runs in its own dedicated namespace and is cluster-specific, Tokenetes service operates in the application namespace and must be deployed seperately for different application environments or namespaces.
 Please follow the instructions from Tokenetes&amp;rsquo;s deployment readme to deploy Tokenetes service.
@@ -52,10 +52,10 @@ apiVersion: tokenetes.io/v1alpha1 kind: TraTExclusion metadata: name: order-serv
     
     <item>
       <title>Setting Up Tokenetes Agents</title>
-      <link>https://tratteria.io/docs/installation/setting-up-tratteria-agents/</link>
+      <link>https://tratteria.io/docs/installation/setting-up-tokenetes-agents/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/installation/setting-up-tratteria-agents/</guid>
+      <guid>https://tratteria.io/docs/installation/setting-up-tokenetes-agents/</guid>
       <description>Tokenetes Agents are sidecar container agents that verify TraTs in microservices.
 Tokenetes agents are injected into microservices pods to verify TraTs. To integrate Tokenetes agents into microservices, follow the instructions from Tokenetes Agent&amp;rsquo;s readme.
 After successfully integrating Tokenetes Agents, you should be able to see running Tokenetes agent sidecars alongside your application microservices containers. For example, below are the running Order service pods from the Tokenetes example application&amp;rsquo;s dev environment.</description>
@@ -63,10 +63,10 @@ After successfully integrating Tokenetes Agents, you should be able to see runni
     
     <item>
       <title>TokenetesConfig</title>
-      <link>https://tratteria.io/docs/configuration-guide/tratteria-config/</link>
+      <link>https://tratteria.io/docs/configuration-guide/tokenetes-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/configuration-guide/tratteria-config/</guid>
+      <guid>https://tratteria.io/docs/configuration-guide/tokenetes-config/</guid>
       <description>The TokenetesConfig resource defines general configuration settings that apply to all APIs and TraTs within a specified Kubernetes namespace.
 Let&amp;rsquo;s delve into the details of TraTs by examining an example.
 apiVersion: tokenetes.io/v1alpha1 kind: TokenetesConfig metadata: name: alpha-stocks-tokenetescfg namespace: alpha-stocks-dev spec: token: issuer: &amp;#34;https://alphastocks.com/tokenetes&amp;#34; audience: &amp;#34;https://alphastocks.com/&amp;#34; lifeTime: &amp;#34;15s&amp;#34; subjectTokens: OIDC: clientId: alpha-stocks-client providerURL: http://dex:5556/dex subjectField: email selfSigned: validation: false jwksEndpoint: &amp;#34;http://alphastocks.com/oidcprovider/.well-known/jwks.json&amp;#34; accessEvaluationAPI: enableAccessEvaluation: false endpoint: &amp;#34;https://alphastocks.authzen.com/access/v1/evaluation&amp;#34; authentication: method: &amp;#34;Bearer&amp;#34; token: value: &amp;#34;${AUTHORIZATION_API_BEARER_TOKEN}&amp;#34; tokenGenerationAuthorizedServiceIds: - &amp;#34;spiffe://dev.</description>

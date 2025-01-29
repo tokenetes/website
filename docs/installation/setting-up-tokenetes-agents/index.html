@@ -128,8 +128,8 @@
 
 
 <li  class="is-active">
-  / <a href="/docs/installation/deploying-tratteria/">
-    Deploying Tokenetes Service
+  / <a href="/docs/installation/setting-up-tokenetes-agents/">
+    Setting Up Tokenetes Agents
   </a>
 </li>
 
@@ -140,7 +140,7 @@
     
     
     
-    <a href="https://github.com/tokenetes/website/blob/main/content/docs/installation/deploying-tratteria.md" class="btn btn-primary" target="_blank">
+    <a href="https://github.com/tokenetes/website/blob/main/content/docs/installation/setting-up-tokenetes-agents.md" class="btn btn-primary" target="_blank">
       <i class="fas fa-pen"></i>
     </a>
 </div>
@@ -183,11 +183,11 @@
             </li>
             
             <li>
-                <a  href="/docs/installation/deploying-tratteria/">Deploying Tokenetes Service</a>
+                <a  href="/docs/installation/deploying-tokenetes/">Deploying Tokenetes Service</a>
             </li>
             
             <li>
-                <a  href="/docs/installation/setting-up-tratteria-agents/">Setting Up Tokenetes Agents</a>
+                <a  href="/docs/installation/setting-up-tokenetes-agents/">Setting Up Tokenetes Agents</a>
             </li>
             
           </ul>
@@ -211,7 +211,7 @@
             </li>
             
             <li>
-                <a  href="/docs/configuration-guide/tratteria-config/">TokenetesConfig</a>
+                <a  href="/docs/configuration-guide/tokenetes-config/">TokenetesConfig</a>
             </li>
             
             <li>
@@ -232,20 +232,21 @@
 
         </section>
         <section class="col col-8">
-          <h1 class="title">Deploying Tokenetes Service</h1>
+          <h1 class="title">Setting Up Tokenetes Agents</h1>
           <p class="subtitle"></p>
           
 <div class="content">
-  <p><a href="https://github.com/tokenetes/tokenetes" target="_blank" rel="noopener">Tokenetes Service</a> is an open source <a href="/docs/transaction-token">Transaction Tokens (TraTs)</a> Service, which is responsible for issuing TraTs.</p>
-<p>While <a href="/docs/installation/installing-tconfigd">Tconfigd</a> runs in its own dedicated namespace and is cluster-specific, Tokenetes service operates in the application namespace and must be deployed seperately for different application environments or namespaces.</p>
-<p>Please follow the instructions from <a href="https://github.com/tokenetes/tokenetes/tree/main/kubernetes" target="_blank" rel="noopener">Tokenetes&rsquo;s deployment readme</a> to deploy Tokenetes service.</p>
-<p>After successfully deploying Tokenetes service, you should be able to see running Tokenetes service pods in the application namespace. For example, below is the running Tokenetes pods from the <a href="https://github.com/tokenetes/example-application" target="_blank" rel="noopener">Tokenetes example application&rsquo;s</a> dev environment.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pod -n alpha-stocks-dev | grep tokenetes
+  <p><a href="https://github.com/tokenetes/tokenetes-agent" target="_blank" rel="noopener">Tokenetes Agents</a> are sidecar container agents that verify TraTs in microservices.</p>
+<p>Tokenetes agents are injected into microservices pods to verify TraTs. To integrate Tokenetes agents into microservices, follow the instructions from <a href="https://github.com/tokenetes/tokenetes-agent/blob/main/README.md" target="_blank" rel="noopener">Tokenetes Agent&rsquo;s readme</a>.</p>
+<p>After successfully integrating Tokenetes Agents, you should be able to see running Tokenetes agent sidecars alongside your application microservices containers. For example, below are the running Order service pods from the <a href="https://github.com/tokenetes/example-application" target="_blank" rel="noopener">Tokenetes example application&rsquo;s</a> dev environment.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get pod -n alpha-stocks-dev | grep order
 </span></span></code></pre></div><p>Output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tokenetes-7b89b4f498-6kgd2   1/1     Running   <span style="color:#ae81ff">0</span>          22m
-</span></span><span style="display:flex;"><span>tokenetes-7b89b4f498-hgxct   1/1     Running   <span style="color:#ae81ff">0</span>          22m
-</span></span><span style="display:flex;"><span>tokenetes-7b89b4f498-tlrqd   1/1     Running   <span style="color:#ae81ff">0</span>          22m
-</span></span></code></pre></div><p>Next, proceed to <a href="/docs/installation/setting-up-tokenetes-agents">Setting up Tokenetes agents</a>, a sidecar for verifying Transaction Tokens (TraTs).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>order-556d94cfdc-gs9ww       2/2     Running   <span style="color:#ae81ff">0</span>          63m
+</span></span><span style="display:flex;"><span>order-556d94cfdc-hjfwd       2/2     Running   <span style="color:#ae81ff">0</span>          63m
+</span></span></code></pre></div><p>Each Order service replica has two containers. The second container is the Tokenetes agent sidecar container.</p>
+<p>Next, proceed to writing Tokenetes Kubernetes resources for specifying how to generate and verify TraTs for your application APIs: <a href="/docs/generating-and-verifying-trats">Generating and Verifying TraTs</a>.</p>
+<br>
+<p>For a practical example of installing Tokenetes on a microservice application, refer to the <a href="https://github.com/tokenetes/example-application" target="_blank" rel="noopener">Tokenetes example application</a>.</p>
 
 </div>
 

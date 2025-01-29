@@ -19,10 +19,10 @@ NAME READY STATUS RESTARTS AGE tconfigd-85c5697c9b-4lx4s 1/1 Running 0 88s Next,
     
     <item>
       <title>Deploying Tokenetes Service</title>
-      <link>https://tratteria.io/docs/installation/deploying-tratteria/</link>
+      <link>https://tratteria.io/docs/installation/deploying-tokenetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/installation/deploying-tratteria/</guid>
+      <guid>https://tratteria.io/docs/installation/deploying-tokenetes/</guid>
       <description>Tokenetes Service is an open source Transaction Tokens (TraTs) Service, which is responsible for issuing TraTs.
 While Tconfigd runs in its own dedicated namespace and is cluster-specific, Tokenetes service operates in the application namespace and must be deployed seperately for different application environments or namespaces.
 Please follow the instructions from Tokenetes&amp;rsquo;s deployment readme to deploy Tokenetes service.
@@ -31,10 +31,10 @@ After successfully deploying Tokenetes service, you should be able to see runnin
     
     <item>
       <title>Setting Up Tokenetes Agents</title>
-      <link>https://tratteria.io/docs/installation/setting-up-tratteria-agents/</link>
+      <link>https://tratteria.io/docs/installation/setting-up-tokenetes-agents/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/installation/setting-up-tratteria-agents/</guid>
+      <guid>https://tratteria.io/docs/installation/setting-up-tokenetes-agents/</guid>
       <description>Tokenetes Agents are sidecar container agents that verify TraTs in microservices.
 Tokenetes agents are injected into microservices pods to verify TraTs. To integrate Tokenetes agents into microservices, follow the instructions from Tokenetes Agent&amp;rsquo;s readme.
 After successfully integrating Tokenetes Agents, you should be able to see running Tokenetes agent sidecars alongside your application microservices containers. For example, below are the running Order service pods from the Tokenetes example application&amp;rsquo;s dev environment.</description>
