@@ -18,10 +18,9 @@ Output:
 
 ```bash
 order-556d94cfdc-gs9ww       2/2     Running   0          63m
-order-556d94cfdc-hjfwd       2/2     Running   0          63m
 ```
 
-Each Order service replica has two containers. The second container is the Tokenetes agent sidecar container.
+Order service has two containers. The second container is the Tokenetes agent sidecar container.
 
 Next, proceed to writing Tokenetes Kubernetes resources for specifying how to generate and verify TraTs for your application APIs: [Generating and Verifying TraTs](/docs/generating-and-verifying-trats).
 

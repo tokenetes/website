@@ -20,8 +20,6 @@ Output:
 
 ```bash
 tokenetes-7b89b4f498-6kgd2   1/1     Running   0          22m
-tokenetes-7b89b4f498-hgxct   1/1     Running   0          22m
-tokenetes-7b89b4f498-tlrqd   1/1     Running   0          22m
 ```
 
 
