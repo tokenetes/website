@@ -48,7 +48,7 @@ jobs:
         run: cp -R public/* ${GITHUB_WORKSPACE}/built-site/
 
       - name: Create CNAME file
-        run: echo 'tratteria.io' > ${GITHUB_WORKSPACE}/built-site/CNAME
+        run: echo 'tokenetes.io.io' > ${GITHUB_WORKSPACE}/built-site/CNAME
 
       - name: Deploy to gh-pages
         run: |
