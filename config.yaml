@@ -32,11 +32,11 @@ params:
   projectName: Tokenetes
   font_awesome_version: 5.12.0
   description: Transaction Tokens Service
-  favicon: favicon.svg
+  favicon: favicon.png
   repositoryUrl: 'https://github.com/tokenetes/website'
   contentDir: /content/
   logos:
-    navbar: text-image-logo.svg
+    navbar: tokenetes - vertical - preview-01.png
   social:
     - name: GitHub
       color: '#000000'
