@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Generating and Verifying TraTs on Tokenetes</title>
-    <link>https://tratteria.io/docs/generating-and-verifying-trats/</link>
+    <link>https://tokenetes.io/docs/generating-and-verifying-trats/</link>
     <description>Recent content in Generating and Verifying TraTs on Tokenetes</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://tratteria.io/docs/generating-and-verifying-trats/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://tokenetes.io/docs/generating-and-verifying-trats/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

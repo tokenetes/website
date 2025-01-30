@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Tokenetes</title>
-    <link>https://tratteria.io/</link>
+    <link>https://tokenetes.io/</link>
     <description>Recent content in Home on Tokenetes</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://tratteria.io/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://tokenetes.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing Tconfigd</title>
-      <link>https://tratteria.io/docs/installation/installing-tconfigd/</link>
+      <link>https://tokenetes.io/docs/installation/installing-tconfigd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/installation/installing-tconfigd/</guid>
+      <guid>https://tokenetes.io/docs/installation/installing-tconfigd/</guid>
       <description>Tconfigd is a central daemon that manages Tokenetes configurations. To get started with Tokenetes, first install Tconfigd following the instructions from Tconfigd&amp;rsquo;s installation readme.
 After successfully installing Tconfigd, you should be able to see a running Tconfigd pod in the tokenetes-system namespace.
 kubectl get pod -n tokenetes-system Output:
@@ -19,20 +19,20 @@ NAME READY STATUS RESTARTS AGE tconfigd-85c5697c9b-4lx4s 1/1 Running 0 88s Next,
     
     <item>
       <title>TraT</title>
-      <link>https://tratteria.io/docs/configuration-guide/trat/</link>
+      <link>https://tokenetes.io/docs/configuration-guide/trat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/configuration-guide/trat/</guid>
+      <guid>https://tokenetes.io/docs/configuration-guide/trat/</guid>
       <description>A TraT resource corresponds to a TraT type, defining a TraT for an external API. It defines how to generate the TraT for an external API and how to verify the TraT in the resulting internal requests. Additionally, it supports access evaluation for external APIs. A TraT resource comprises four sections: External API Specification, TraT Generation, TraT Verification, and Access Evaluation.
 The external API specification section specifies the external API for which the TraT is defined.</description>
     </item>
     
     <item>
       <title>Deploying Tokenetes Service</title>
-      <link>https://tratteria.io/docs/installation/deploying-tokenetes/</link>
+      <link>https://tokenetes.io/docs/installation/deploying-tokenetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/installation/deploying-tokenetes/</guid>
+      <guid>https://tokenetes.io/docs/installation/deploying-tokenetes/</guid>
       <description>Tokenetes Service is an open source Transaction Tokens (TraTs) Service, which is responsible for issuing TraTs.
 While Tconfigd runs in its own dedicated namespace and is cluster-specific, Tokenetes service operates in the application namespace and must be deployed seperately for different application environments or namespaces.
 Please follow the instructions from Tokenetes&amp;rsquo;s deployment readme to deploy Tokenetes service.
@@ -41,10 +41,10 @@ After successfully deploying Tokenetes service, you should be able to see runnin
     
     <item>
       <title>TraTExclusion</title>
-      <link>https://tratteria.io/docs/configuration-guide/trat-exclusion/</link>
+      <link>https://tokenetes.io/docs/configuration-guide/trat-exclusion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/configuration-guide/trat-exclusion/</guid>
+      <guid>https://tokenetes.io/docs/configuration-guide/trat-exclusion/</guid>
       <description>The TraTExclusion resource is used to specify endpoints of a service that do not require TraTs. This is particularly useful for non-functional APIs, such as health checks and monitoring, or for functional APIs that have not yet been adapted to support TraTs. The configuration is specific to each service.
 Below is an example of TraTExclusion for the order service:
 apiVersion: tokenetes.io/v1alpha1 kind: TraTExclusion metadata: name: order-service-tratexcl namespace: alpha-stocks-dev spec: service: order endpoints: - path: &amp;#34;/health&amp;#34; method: &amp;#34;GET&amp;#34; </description>
@@ -52,10 +52,10 @@ apiVersion: tokenetes.io/v1alpha1 kind: TraTExclusion metadata: name: order-serv
     
     <item>
       <title>Setting Up Tokenetes Agents</title>
-      <link>https://tratteria.io/docs/installation/setting-up-tokenetes-agents/</link>
+      <link>https://tokenetes.io/docs/installation/setting-up-tokenetes-agents/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/installation/setting-up-tokenetes-agents/</guid>
+      <guid>https://tokenetes.io/docs/installation/setting-up-tokenetes-agents/</guid>
       <description>Tokenetes Agents are sidecar container agents that verify TraTs in microservices.
 Tokenetes agents are injected into microservices pods to verify TraTs. To integrate Tokenetes agents into microservices, follow the instructions from Tokenetes Agent&amp;rsquo;s readme.
 After successfully integrating Tokenetes Agents, you should be able to see running Tokenetes agent sidecars alongside your application microservices containers. For example, below are the running Order service pods from the Tokenetes example application&amp;rsquo;s dev environment.</description>
@@ -63,10 +63,10 @@ After successfully integrating Tokenetes Agents, you should be able to see runni
     
     <item>
       <title>TokenetesConfig</title>
-      <link>https://tratteria.io/docs/configuration-guide/tokenetes-config/</link>
+      <link>https://tokenetes.io/docs/configuration-guide/tokenetes-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/configuration-guide/tokenetes-config/</guid>
+      <guid>https://tokenetes.io/docs/configuration-guide/tokenetes-config/</guid>
       <description>The TokenetesConfig resource defines general configuration settings that apply to all APIs and TraTs within a specified Kubernetes namespace.
 Let&amp;rsquo;s delve into the details of TraTs by examining an example.
 apiVersion: tokenetes.io/v1alpha1 kind: TokenetesConfig metadata: name: alpha-stocks-tokenetescfg namespace: alpha-stocks-dev spec: token: issuer: &amp;#34;https://alphastocks.com/tokenetes&amp;#34; audience: &amp;#34;https://alphastocks.com/&amp;#34; lifeTime: &amp;#34;15s&amp;#34; subjectTokens: OIDC: clientId: alpha-stocks-client providerURL: http://dex:5556/dex subjectField: email selfSigned: validation: false jwksEndpoint: &amp;#34;http://alphastocks.com/oidcprovider/.well-known/jwks.json&amp;#34; accessEvaluationAPI: enableAccessEvaluation: false endpoint: &amp;#34;https://alphastocks.authzen.com/access/v1/evaluation&amp;#34; authentication: method: &amp;#34;Bearer&amp;#34; token: value: &amp;#34;${AUTHORIZATION_API_BEARER_TOKEN}&amp;#34; tokenGenerationAuthorizedServiceIds: - &amp;#34;spiffe://dev.</description>
@@ -74,10 +74,10 @@ apiVersion: tokenetes.io/v1alpha1 kind: TokenetesConfig metadata: name: alpha-st
     
     <item>
       <title>Example Application Configurations</title>
-      <link>https://tratteria.io/docs/configuration-guide/example-application-configs/</link>
+      <link>https://tokenetes.io/docs/configuration-guide/example-application-configs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tratteria.io/docs/configuration-guide/example-application-configs/</guid>
+      <guid>https://tokenetes.io/docs/configuration-guide/example-application-configs/</guid>
       <description>Below are the Tokenetes Kubernetes resources for the Tokenetes example application. These examples can serve as references when writing the resources for your microservices application.
 TraTs The Tokenetes example application has four external APIs; consequently, there are four TraT resources.
 stock-details-api-trat.yaml:
