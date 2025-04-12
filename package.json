@@ -9,10 +9,13 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^5.3.5",
     "hugo-extended": "^0.86.0",
     "jquery": "^3.5.1",
-    "netlify-cli": "^5.2.10",
+    "netlify-cli": "^20.0.0",
     "popper.js": "^1.16.1"
+  },
+  "dependencies": {
+    "netlify": "^13.3.4"
   }
 }
