@@ -63,7 +63,7 @@ html, body {
   background: #5a67d8;
   color: #fff;
   text-decoration: none;
-  font-size: 1.4vw;
+  font-size: clamp(16px, 1.4vw, 22px);
   font-weight: 600;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -107,7 +107,7 @@ html, body {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   text-decoration: none;
-  font-size: 1.4vw;
+  font-size: clamp(16px, 1.4vw, 22px);
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
