@@ -13,7 +13,7 @@ html, body {
 }
 .home {
   text-align: center;
-  padding: 4em 1em 6em 1em;
+  padding: 0em 1em 6em 1em;
 }
 .home img {
   width: 700px;
@@ -122,6 +122,66 @@ html, body {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.cncf-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  width: 100vw;
+  margin-top: -5em;
+  margin-bottom: 4em;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+}
+.cncf-banner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.cncf-banner img {
+  height: 50px;
+  margin-bottom: 15px;
+  filter: none;
+}
+.cncf-banner p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #fff;
+  text-align: center;
+}
+.cncf-banner a {
+  color: #3EDCFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+.cncf-banner a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .cncf-banner {
+    padding: 20px 0;
+  }
+  .cncf-banner-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cncf-banner img {
+    height: 42px;
+    margin-bottom: 12px;
+  }
+  .cncf-banner p {
+    font-size: 16px;
+  }
+}
 footer {
   background: #333;
   padding: 2em 0;
@@ -184,4 +244,11 @@ footer a {
     View on GitHub
   </a>
 </div>
+</div>
+
+<div class="cncf-banner">
+  <div class="cncf-banner-container">
+    <img src="/img/logos/cncf-color-bg.svg" alt="CNCF Logo">
+    <p>Tokenetes is a <a href="https://www.cncf.io/" target="_blank" rel="noopener noreferrer">Cloud Native Computing Foundation</a> sandbox project.</p>
+  </div>
 </div>
